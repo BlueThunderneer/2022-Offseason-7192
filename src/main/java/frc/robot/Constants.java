@@ -20,13 +20,17 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public class Constants {
-   /**
-    * public static final class DriveConstants {
-    *   public static final int kLeftMotor1Port = 0;
-    *   public static final int kLeftMotor2Port = 1;
-    *   public static final int kRightMotor1Port = 2;
-    *   public static final int kRightMotor2Port = 3; 
-    * }
+   /*
+     public static final class DriveConstants {
+       public static final int[] kLeftEncoderPorts = new int[] {0, 1};
+       public static final int[] kRightEncoderPorts = new int[] {2, 3};
+       public static final boolean kLeftEncoderReversed = false;        //// dependent on which motors are reverse, needs to be revised
+       public static final boolean kRightEncoderReversed = true;        //// dependent on which motors are reverse, needs to be revised
+     
+       public static final int KEncoderCPR = 1024;
+	    public static final double kWheelDiameterInches = __________ ;	
+ 	    public static final double kEncoderDistancePerPulse = (kWheelDiameterInches * Math.PI) / (double)kEncoderCPR;
+     }
     */ 
 }
 

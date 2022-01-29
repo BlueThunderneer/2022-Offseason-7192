@@ -14,34 +14,34 @@ public class IntakeSS extends SubsystemBase {
     private Spark spark5;
     private MotorControllerGroup intakemotors;
 
-    public IntakeSS() {
-spark4 = new Spark(4);  //define motor controller 4
- addChild("Spark4",spark4);
- spark4.setInverted(false);
+public IntakeSS() {
+    spark4 = new Spark(4);   //define motor controller 4
+    addChild("Spark4",spark4);
+    spark4.setInverted(false);
 
-spark5 = new Spark(5);  //define motor controller 5
- addChild("Spark5",spark5);
- //Inverted so it runs in opposite direction as Spark4 when added to the group in the next few lines
- spark5.setInverted(true);
+    spark5 = new Spark(5);  //define motor controller 5
+    addChild("Spark5",spark5);
+    //Inverted so it runs in opposite direction as Spark4 when added to the group in the next few lines
+    spark5.setInverted(true);
 
- //Put the motor controllers in a group 
+    //Put the motor controllers in a group 
     intakemotors = new MotorControllerGroup(spark4, spark5);
     addChild("IntakeMotors",intakemotors);
     }
 
     /** Grabs the ball */
-  public void grabBall() {
+public void grabBall() {
     intakemotors.set(0.5);
-  }
+   }
 
   /** Launches the ball. */
-  public void launchBall() {
+public void launchBall() {
     intakemotors.set(-1.0);
   }
    
   // Stops running intake. This is called at the end of Grab and Launch Ball Commands.
   // Stops the intake motors when the button is released.
-   public void stop() {
+public void stop() {
     intakemotors.set(0.0);
   }        
 }
