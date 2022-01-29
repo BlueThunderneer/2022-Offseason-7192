@@ -33,6 +33,13 @@
       "/SmartDashboard/Auto Mode": "String Chooser",
       "/SmartDashboard/Autonomous Command": "Command",
       "/SmartDashboard/DriveCommand": "Command"
+    },
+    "windows": {
+      "/SmartDashboard/Auto Mode": {
+        "window": {
+          "visible": true
+        }
+      }
     }
   },
   "NetworkTables": {
