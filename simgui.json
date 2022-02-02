@@ -26,6 +26,7 @@
   "NTProvider": {
     "types": {
       "/FMSInfo": "FMSInfo",
+      "/LiveWindow/ArmSS": "Subsystem",
       "/LiveWindow/Drivetrain": "Subsystem",
       "/LiveWindow/Drivetrain/Drive": "DifferentialDrive",
       "/LiveWindow/IntakeSS": "Subsystem",
@@ -35,6 +36,11 @@
       "/SmartDashboard/DriveCommand": "Command"
     },
     "windows": {
+      "/LiveWindow/ArmSS": {
+        "window": {
+          "visible": true
+        }
+      },
       "/SmartDashboard/Auto Mode": {
         "window": {
           "visible": true
@@ -43,10 +49,10 @@
     }
   },
   "NetworkTables": {
-    "FMSInfo": {
-      "open": true
-    },
     "LiveWindow": {
+      "ArmSS": {
+        "open": true
+      },
       "open": true
     },
     "SmartDashboard": {
