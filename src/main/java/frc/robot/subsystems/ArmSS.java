@@ -2,37 +2,36 @@ package frc.robot.subsystems;
 import frc.robot.commands.armdown;
 import frc.robot.commands.armup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.motorcontrol.Talon;
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.TalonSRXSimCollection;
+import com.ctre.phoenix.motorcontrol.GroupMotorControllers;
+
+
 
 
 public class ArmSS extends SubsystemBase{
-    private Talon talon0;
-    private Talon talon1;
-    private MotorControllerGroup armmotors;
+    private TalonSRX talon0;
+    private TalonSRX talon1;
+
 
 public ArmSS() {
-    talon0 = new Talon(6); 
-    addChild("talon0", talon0 );
-    talon0.setInverted(false);
-
-    talon1 = new Talon(7);
-    addChild("talon1", talon1);
-    talon1.setInverted(true);
-
-    armmotors = new MotorControllerGroup(talon0, talon1);
-    addChild("armmotors", armmotors);
-}
+    talon0 = new TalonSRX(30); 
+    talon1 = new TalonSRX(31);
+    talon1.set(ControlMode.Follower, talon0.getDeviceID());
+ }
 
 public void armup(){
-    armmotors.set(.5);
+    talon0.set(ControlMode.PercentOutput, 0.5);
+    
 }
 
 public void armdown(){
-    armmotors.set(-.5);
+    talon0.set(ControlMode.PercentOutput, -0.5);
 }
 
 public void stop() {
-    armmotors.set(0.0);
+    talon0.set(ControlMode.PercentOutput, 0.0);
   }
 }
