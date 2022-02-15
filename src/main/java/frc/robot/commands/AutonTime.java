@@ -1,6 +1,7 @@
 package frc.robot.commands;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.IntakeSS;
+import frc.robot.subsystems.ArmSS;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 
 public class AutonTime extends SequentialCommandGroup {
@@ -11,10 +12,11 @@ public class AutonTime extends SequentialCommandGroup {
    *
    * 
    */
-  public AutonTime(Drivetrain m_drivetrain, IntakeSS m_intakess) {
+  public AutonTime(ArmSS m_ArmSS, Drivetrain m_drivetrain, IntakeSS m_intakess) {
       addCommands(
-        // new RaiseArm(), //Raise the Cargo arm to shoot need to add this subsystem to the contstructor)
+        new ArmupTime(1.0, m_ArmSS), //Raise the Cargo arm to shoot need to add this subsystem to the contstructor)
         new LaunchBallTime(2.0, m_intakess),  //Launch the Ball into Hub
+        new ArmdownTime(1.0, m_ArmSS),
         new DriveTime(0.75, 0.0, 5.0, m_drivetrain) //Drive using these params (speed,Rotation,Time,Subsystem used)
       );
   }    
