@@ -14,8 +14,15 @@ public class armdown extends CommandBase{
 
     @Override
     public void initialize(){
+        m_armss.initalizeCounterDown();
         m_armss.armdown();
     }
+    
+    @Override
+    public boolean isFinished(){        //if returns true - calls end
+        return m_armss.DownSwitchSet();
+    }
+    
     @Override
     public void end(boolean interrupted){
         m_armss.stop();
