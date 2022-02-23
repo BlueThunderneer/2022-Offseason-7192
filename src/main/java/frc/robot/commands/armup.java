@@ -14,8 +14,15 @@ public class armup extends CommandBase{
 
     @Override
     public void initialize(){
+        m_armss.initalizeCounterUP();     //reset the counter
         m_armss.armup();
     }
+    
+        @Override
+    public boolean isFinished(){        //if returns true - calls end
+        return m_armss.UPSwitchSet();
+    }
+    
     @Override
     public void end(boolean interrupted){
         m_armss.stop();
