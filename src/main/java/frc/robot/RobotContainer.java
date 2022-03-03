@@ -103,10 +103,10 @@ private final Joystick m_opJoy1 = new Joystick(1);
     // is scheduled over it.
     m_drivetrain.setDefaultCommand(getArcadeDriveCommand());
     //Run intake IN when the opJoy1 trigger is pressed
-    new JoystickButton(m_opJoy1, 1)
+    new JoystickButton(m_opJoy1, 2)
       .whenHeld(new GrabBall(m_intakess));
     //Run intake OUT when the opJoy1 thumb button is pressed
-    new JoystickButton(m_opJoy1, 2)
+    new JoystickButton(m_opJoy1, 1)
       .whenHeld(new LaunchBall(m_intakess));
 
       new JoystickButton(m_opJoy1, 3)
