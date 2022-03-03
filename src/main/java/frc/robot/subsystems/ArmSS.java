@@ -28,7 +28,7 @@ public void armup(){
 }
 
 public void armdown(){
-    talon0.set(ControlMode.PercentOutput, -0.5);
+    talon0.set(ControlMode.PercentOutput, -0.25);
 }
 
 public void stop() {

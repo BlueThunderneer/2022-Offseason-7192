@@ -82,12 +82,12 @@ public class ClimbSS extends SubsystemBase{
     }
 
   public void ClimbUp(){
-    m_sMax.set(.5);
+    m_sMax.set(1);
     // set at 200 velocity; needs to be changed with real deal
     }
   
     public void ClimbDown(){
-        m_sMax.set(-0.5);
+        m_sMax.set(-1);
         //set to -200 velocity; needs to be chnaged with real deal
     }
     public void stop() {
