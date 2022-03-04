@@ -32,7 +32,7 @@ public ArmSS() {
  }
 
 public void armup(){
-    talon0.set(ControlMode.PercentOutput, 0.5);
+    talon0.set(ControlMode.PercentOutput, 0.75);
 
     //m_sMax.set(.5);
     
@@ -40,9 +40,9 @@ public void armup(){
 
 public void armdown(){
 
-    talon0.set(ControlMode.PercentOutput, -0.5);
+    //talon0.set(ControlMode.PercentOutput, -0.75);
     //m_sMax.set(-0.5);
-    talon0.set(ControlMode.PercentOutput, -0.5);
+    talon0.set(ControlMode.PercentOutput, -0.75);
 
 }
 
