@@ -42,7 +42,7 @@ public void armdown(){
 
     talon0.set(ControlMode.PercentOutput, -0.5);
     //m_sMax.set(-0.5);
-    talon0.set(ControlMode.PercentOutput, -0.25);
+    talon0.set(ControlMode.PercentOutput, -0.5);
 
 }
 

@@ -82,8 +82,8 @@ private final Joystick m_opJoy1 = new Joystick(1);
 
     
     // Configure default commands
-    m_chooser.setDefaultOption("Autonomous Command", new AutonomousCommand(m_drivetrain));
-    m_chooser.addOption("Launch n Drive", m_LandDAuto);
+    m_chooser.setDefaultOption("Launch n Drive", m_LandDAuto);
+    m_chooser.addOption("Autonomous Command", new AutonomousCommand(m_drivetrain));
     // Configure autonomous sendable chooser
     SmartDashboard.putData("Auto Mode", m_chooser);
   }
