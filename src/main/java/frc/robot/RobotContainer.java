@@ -110,10 +110,10 @@ private final Joystick m_opJoy1 = new Joystick(1);
       .whenHeld(new LaunchBall(m_intakess));
 
       new JoystickButton(m_opJoy1, 3)
-      .whenHeld(new armup(m_armss));
+      .whenPressed(new armup(m_armss));
 
       new JoystickButton(m_opJoy1, 4)
-      .whenHeld(new armdown(m_armss));
+      .whenPressed(new armdown(m_armss));
 
       new JoystickButton(m_controller, 1)
       .whenHeld(new ClimbUp(m_ClimbSS));
