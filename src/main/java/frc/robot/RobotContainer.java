@@ -102,22 +102,22 @@ private final Joystick m_opJoy1 = new Joystick(1);
     // Default command is arcade drive. This will run unless another command
     // is scheduled over it.
     m_drivetrain.setDefaultCommand(getArcadeDriveCommand());
-    //Run intake IN when the opJoy1 trigger is pressed
+    //Run intake IN when the opJoy1 trigger is held
     new JoystickButton(m_opJoy1, 2)
       .whenHeld(new GrabBall(m_intakess));
-    //Run intake OUT when the opJoy1 thumb button is pressed
+    //Run intake OUT when the opJoy1 thumb button is held
     new JoystickButton(m_opJoy1, 1)
       .whenHeld(new LaunchBall(m_intakess));
-
+    //Raise the arm when opJoy1 left button (3) on top of joystick is pressed
       new JoystickButton(m_opJoy1, 3)
       .whenPressed(new armup(m_armss));
-
+    //Raise the arm when opJoy1 right button (4) on top of joystick is pressed
       new JoystickButton(m_opJoy1, 4)
       .whenPressed(new armdown(m_armss));
-
+    //Raise the climber when driver controller A button is held
       new JoystickButton(m_controller, 1)
       .whenHeld(new ClimbUp(m_ClimbSS));
-
+    //Raise the climber when driver controller B button is held
       new JoystickButton(m_controller, 2)
       .whenHeld(new ClimbDown(m_ClimbSS));
  
