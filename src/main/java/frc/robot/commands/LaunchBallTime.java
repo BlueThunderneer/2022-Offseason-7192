@@ -21,7 +21,9 @@ public class LaunchBallTime extends CommandBase {
  //If the button is held this will be called everytime the scheduler runs (~20ms)
  public void initialize() {
     m_startTime = System.currentTimeMillis();
-    m_intakess.launchBall();
+    if (System.currentTimeMillis() - m_startTime >= 500{       //will only proceed once a .5 second or 500 millisecond delay has occurred
+      m_intakess.launchBall();
+   }
  }
 
  @Override
