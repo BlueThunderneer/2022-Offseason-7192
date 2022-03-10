@@ -1,6 +1,6 @@
 import 
   
-public class time extends Trigger{
+public class time{
   long start;
   double Time;
   
