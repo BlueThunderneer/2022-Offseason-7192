@@ -31,22 +31,24 @@ public ArmSS() {
    /* talon0 = new TalonSRX(30); 
     talon1 = new TalonSRX(31);
     talon1.set(ControlMode.Follower, talon0.getDeviceID()); */
-    DS1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 30, 31); //30 is forward and 31 is reverse 
-    DS2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 28, 29);// 28 is forward and 29 is reverse
+    DS1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 0, 1); //0 is forward and 1 is reverse 
+    DS2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 2, 3); //2 is forward and 3 is reverse
     //m_sMax = new CANSparkMax(33, MotorType.kBrushless);
     //m_sMax.restoreFactoryDefaults();
  }
 
 public void initialize(){
-    DS1.set(kReverse);
-    DS2.set(kReverse);
+    //DO NOTHING SO WE DO NOT MOVE THE ARM UNEXPECTEDLY
+    //DS1.set(kReverse);
+    //DS2.set(kReverse);
 }
 
 public void armup(){
   //  talon0.set(ControlMode.PercentOutput, 0.75);
     //m_sMax.set(.5);
+
     DS1.set(kForward);
-    DS2.set(kForward);
+    //DS2.set(kForward); Only using one Solenoid for 2 cylinders at first
     
 }
 
@@ -54,19 +56,20 @@ public void armdown(){
 
     //talon0.set(ControlMode.PercentOutput, -0.75);
     //m_sMax.set(-0.5);
-   // talon0.set(ControlMode.PercentOutput, -0.75);
+    // talon0.set(ControlMode.PercentOutput, -0.75);
 
    DS1.set(kReverse);
-   DS2.set(kReverse);
+   //DS2.set(kReverse); Only using one Solenoid for 2 cylinders at first
 }
 
 public void stop() {
     //talon0.set(ControlMode.PercentOutput, 0.0);
 
     //m_sMax.set(0);
-
-    DS1.set(kReverse);
-    DS2.set(kReverse);
+    
+    //DO NOTHING SO WE DO NOT MOVE THE ARM UNEXPECTEDLY
+    //DS1.set(kReverse);
+    //DS2.set(kReverse);
   }
 }
 
