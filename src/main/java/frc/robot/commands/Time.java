@@ -1,4 +1,6 @@
-public class time extends CommandBase{
+import 
+  
+public class time extends Trigger{
   long start;
   double Time;
   
