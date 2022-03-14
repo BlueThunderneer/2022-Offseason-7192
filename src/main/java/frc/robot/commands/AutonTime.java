@@ -16,6 +16,7 @@ public class AutonTime extends SequentialCommandGroup {
        addCommands(
        // new ArmupTime(3.0, m_ArmSS), //Raise the Cargo arm to shoot need to add this subsystem to the contstructor)
         new armup(m_ArmSS), // set solenoids to forward
+         new Time(.5),     //Half Second Delay
         new LaunchBallTime(2.0, m_intakess),  //Launch the Ball into Hub
         new armdown(m_ArmSS),
         //new ArmdownTime(1.0, m_ArmSS),
