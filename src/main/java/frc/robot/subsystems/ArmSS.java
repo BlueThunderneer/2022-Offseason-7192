@@ -31,8 +31,8 @@ public ArmSS() {
    /* talon0 = new TalonSRX(30); 
     talon1 = new TalonSRX(31);
     talon1.set(ControlMode.Follower, talon0.getDeviceID()); */
-    DS1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 0, 1); //0 is forward and 1 is reverse 
-    DS2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 2, 3); //2 is forward and 3 is reverse
+    DS1 = new DoubleSolenoid(6, PneumaticsModuleType.CTREPCM, 0, 1); //0 is forward and 1 is reverse 
+    DS2 = new DoubleSolenoid(6, PneumaticsModuleType.CTREPCM, 2, 3); //2 is forward and 3 is reverse
     //m_sMax = new CANSparkMax(33, MotorType.kBrushless);
     //m_sMax.restoreFactoryDefaults();
  }
