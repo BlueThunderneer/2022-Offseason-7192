@@ -48,7 +48,7 @@ public void armup(){
     //m_sMax.set(.5);
 
     DS1.set(kForward);
-    //DS2.set(kForward); Only using one Solenoid for 2 cylinders at first
+    DS2.set(kForward); //Only using one Solenoid for 2 cylinders at first
     
 }
 
@@ -59,7 +59,7 @@ public void armdown(){
     // talon0.set(ControlMode.PercentOutput, -0.75);
 
    DS1.set(kReverse);
-   //DS2.set(kReverse); Only using one Solenoid for 2 cylinders at first
+   DS2.set(kReverse); //Only using one Solenoid for 2 cylinders at first
 }
 
 public void stop() {
