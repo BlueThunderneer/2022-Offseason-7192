@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 import frc.robot.commands.armdown;
 import frc.robot.commands.armup;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -24,6 +25,7 @@ public class ArmSS extends SubsystemBase{
     private TalonSRX talon1;*/
     private DoubleSolenoid DS1;
     private DoubleSolenoid DS2;
+    Compressor air;
     //private CANSparkMax m_sMax;
 
 
@@ -33,15 +35,13 @@ public ArmSS() {
     talon1.set(ControlMode.Follower, talon0.getDeviceID()); */
     DS1 = new DoubleSolenoid(6, PneumaticsModuleType.CTREPCM, 0, 1); //0 is forward and 1 is reverse 
     DS2 = new DoubleSolenoid(6, PneumaticsModuleType.CTREPCM, 2, 3); //2 is forward and 3 is reverse
+    air = new Compressor(6, PneumaticsModuleType.CTREPCM);
+    
     //m_sMax = new CANSparkMax(33, MotorType.kBrushless);
     //m_sMax.restoreFactoryDefaults();
  }
 
-public void initialize(){
-    //DO NOTHING SO WE DO NOT MOVE THE ARM UNEXPECTEDLY
-    //DS1.set(kReverse);
-    //DS2.set(kReverse);
-}
+
 
 public void armup(){
   //  talon0.set(ControlMode.PercentOutput, 0.75);
@@ -50,6 +50,20 @@ public void armup(){
     DS1.set(kForward);
     DS2.set(kForward); //Only using one Solenoid for 2 cylinders at first
     
+}
+
+
+
+public void airOFF(){
+  air.disable();
+}
+
+
+
+public void initialize(){
+    //DO NOTHING SO WE DO NOT MOVE THE ARM UNEXPECTEDLY
+    //DS1.set(kReverse);
+    //DS2.set(kReverse);
 }
 
 public void armdown(){
@@ -70,7 +84,7 @@ public void stop() {
     //DO NOTHING SO WE DO NOT MOVE THE ARM UNEXPECTEDLY
     //DS1.set(kReverse);
     //DS2.set(kReverse);
-  }
+  } 
 }
 
 

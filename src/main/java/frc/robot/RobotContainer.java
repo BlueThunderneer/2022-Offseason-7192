@@ -20,6 +20,7 @@ import frc.robot.commands.armdown;
 import frc.robot.commands.armup;
 import frc.robot.commands.ClimbUp;
 import frc.robot.commands.ClimbDown;
+import frc.robot.commands.airOFF;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -120,6 +121,8 @@ private final Joystick m_opJoy1 = new Joystick(1);
     //Raise the climber when driver controller B button is held
       new JoystickButton(m_controller, 2)
       .whenHeld(new ClimbDown(m_ClimbSS));
+      new JoystickButton(m_controller, 4)
+      .whenPressed(new airOFF(m_armss));
  
   }
 

@@ -1,6 +1,11 @@
 {
   "HALProvider": {
     "Other Devices": {
+      "Compressor[6]": {
+        "header": {
+          "open": true
+        }
+      },
       "SPARK MAX [32]": {
         "header": {
           "open": true
@@ -38,6 +43,7 @@
       "/LiveWindow/Drivetrain": "Subsystem",
       "/LiveWindow/Drivetrain/Drive": "DifferentialDrive",
       "/LiveWindow/IntakeSS": "Subsystem",
+      "/LiveWindow/IntakeSS/IntakeMotors": "Motor Controller",
       "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
       "/SmartDashboard/Auto Mode": "String Chooser",
       "/SmartDashboard/Autonomous Command": "Command",
@@ -58,9 +64,6 @@
   },
   "NetworkTables": {
     "LiveWindow": {
-      "ArmSS": {
-        "open": true
-      },
       "open": true
     },
     "SmartDashboard": {
