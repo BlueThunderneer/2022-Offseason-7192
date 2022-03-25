@@ -9,12 +9,17 @@ public class Time extends CommandBase{
     private long startTime;
 
    public Time(double time){
-       elapse = time *1000;
+       elapse = time * 1000;
    }
 
    @Override
    public void initialize(){
        startTime = System.currentTimeMillis();
+   }
+
+   @Override
+   public void end(boolean interrupted){
+        //Command has ended
    }
 
    @Override
