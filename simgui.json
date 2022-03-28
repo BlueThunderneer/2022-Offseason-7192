@@ -64,9 +64,18 @@
   },
   "NetworkTables": {
     "LiveWindow": {
+      "ClimbSS": {
+        "open": true
+      },
       "open": true
     },
     "SmartDashboard": {
+      "Autonomous Command": {
+        "open": true
+      },
+      "DriveCommand": {
+        "open": true
+      },
       "open": true
     }
   }

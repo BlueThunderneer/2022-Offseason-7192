@@ -21,7 +21,9 @@ import frc.robot.commands.armup;
 import frc.robot.commands.ClimbUp;
 import frc.robot.commands.ClimbDown;
 import frc.robot.commands.airOFF;
-import frc.robot.commands.airON;
+import frc.robot.commands.grab;
+import frc.robot.commands.letgo;
+//import frc.robot.commands.airON;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -125,9 +127,15 @@ private final Joystick m_opJoy1 = new Joystick(1);
     //Disable Compressor when driver controller Y button is Pressed
       new JoystickButton(m_controller, 4)
       .whenPressed(new airOFF(m_armss));
+      //grab when button 5 is pressed
+      new JoystickButton(m_controller, 5)
+      .whenPressed(new grab(m_ClimbSS));
+      // letgo when button 6 is pressed
+      new JoystickButton(m_controller, 6)
+      .whenPressed(new letgo(m_ClimbSS));
     //Enable Compressor when driver controller X button is Pressed
-      new JoystickButton(m_controller, 3)
-      .whenPressed(new airON(m_armss));
+     // new JoystickButton(m_controller, 3)
+      //.whenPressed(new airON(m_armss));
  
   }
 

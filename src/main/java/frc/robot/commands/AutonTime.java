@@ -15,10 +15,10 @@ public class AutonTime extends SequentialCommandGroup {
   public AutonTime(ArmSS m_ArmSS, Drivetrain m_drivetrain, IntakeSS m_intakess) {
        addCommands(
        // new ArmupTime(3.0, m_ArmSS), //Raise the Cargo arm to shoot need to add this subsystem to the contstructor)
-        new armup(m_ArmSS), // set solenoids to forward
-        new Time(1),     //One Second Delay
+        new ArmupTime(1.0, m_ArmSS), // set solenoids to forward
+        //new Time(1),     //One Second Delay
         new LaunchBallTime(1.0, m_intakess),  //Launch the Ball into Hub, run intake out for 1 second
-        new armdown(m_ArmSS),
+        new ArmdownTime(1.0, m_ArmSS),
         //new ArmdownTime(1.0, m_ArmSS),
         new DriveTime(-0.6, 0.0, 1.5, m_drivetrain), //Drive using these params (speed,Rotation,Time,Subsystem used)
         new DriveTime( 0, -0.5, 2.0, m_drivetrain ), // we spin around

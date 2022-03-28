@@ -16,8 +16,8 @@ public class armup extends CommandBase{
     public void initialize(){
         m_armss.armup();
     }
-   /* @Override
+    @Override
     public void end(boolean interrupted){
-        m_armss.stop();
-    } */
+        
+    } 
 }
