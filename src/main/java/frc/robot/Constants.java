@@ -32,5 +32,6 @@ public class Constants {
  	    public static final double kEncoderDistancePerPulse = (kWheelDiameterInches * Math.PI) / (double)kEncoderCPR;
      }
     */ 
+   // boolean KGyroReversed = false;
 }
 

@@ -34,6 +34,10 @@ public void grabBall() {
     intakemotors.set(0.5);
    }
 
+
+   public void launchballauton() {
+     intakemotors.set(-0.6);
+   }
   /** Launches the ball. */
 public void launchBall() {
     intakemotors.set(-1.0);
