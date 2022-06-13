@@ -23,7 +23,6 @@ import frc.robot.commands.ClimbDown;
 import frc.robot.commands.airOFF;
 import frc.robot.commands.grab;
 import frc.robot.commands.letgo;
-import frc.robot.commands.testTurn;
 import frc.robot.commands.airON;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -58,7 +57,7 @@ public class RobotContainer {
     public final IntakeSS m_intakess = new IntakeSS();
     public final ArmSS m_armss = new ArmSS();
     public final ClimbSS m_ClimbSS = new ClimbSS();
-    public final Drivetrain param2 = new Drivetrain();
+
 // Joysticks
 private final Joystick m_controller = new Joystick(0);
 private final Joystick m_opJoy1 = new Joystick(1);
@@ -137,8 +136,6 @@ private final Joystick m_opJoy1 = new Joystick(1);
     //Enable Compressor when driver controller X button is Pressed
       new JoystickButton(m_controller, 3)
       .whenPressed(new airON(m_armss));
-      new JoystickButton(m_controller, 7)
-      .whenPressed(new testTurn(param2));
  
   }
 
