@@ -20,7 +20,7 @@ public class ArmupTime extends CommandBase{
     @Override
     public void initialize(){
         m_startTime = System.currentTimeMillis();
-       // m_ArmSS.armup();
+        m_ArmSS.armup();
     }
     @Override
     public void end(boolean interrupted){
