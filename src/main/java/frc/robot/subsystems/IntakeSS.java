@@ -36,7 +36,7 @@ public void grabBall() {
 
   /** Launches the ball. */
 public void launchBall() {
-    intakemotors.set(-.5);
+    intakemotors.set(-.25);
   }
    
   // Stops running intake. This is called at the end of Grab and Launch Ball Commands.
