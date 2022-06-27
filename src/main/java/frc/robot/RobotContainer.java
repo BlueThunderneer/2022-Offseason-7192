@@ -18,6 +18,7 @@ import frc.robot.commands.GrabBall;
 import frc.robot.commands.LaunchBall;
 import frc.robot.commands.armdown;
 import frc.robot.commands.armup;
+import frc.robot.commands.getIntakeSpeed;
 import frc.robot.commands.ClimbUp;
 import frc.robot.commands.ClimbDown;
 import frc.robot.commands.airOFF;
@@ -69,7 +70,7 @@ private final Joystick m_opJoy1 = new Joystick(1);
   
   // A chooser for autonomous commands
   SendableChooser<Command> m_chooser = new SendableChooser<>();
-
+  SendableChooser<Command> m_speed = new SendableChooser<>();
   /**
   * The container for the robot.  Contains subsystems, OI devices, and commands.
   */
@@ -80,6 +81,7 @@ private final Joystick m_opJoy1 = new Joystick(1);
     // SmartDashboard Buttons
     SmartDashboard.putData("Autonomous Command", new AutonomousCommand(m_drivetrain));
     SmartDashboard.putData("DriveCommand", new DriveCommand( m_drivetrain, null, null));
+    SmartDashboard.putData("Drive Speed", new getIntakeSpeed(m_intakess));
 
     // Configure the button bindings
     configureButtonBindings();
@@ -88,8 +90,12 @@ private final Joystick m_opJoy1 = new Joystick(1);
     // Configure default commands
     m_chooser.setDefaultOption("Launch n Drive", m_LandDAuto);
     m_chooser.addOption("Autonomous Command", new AutonomousCommand(m_drivetrain));
+
+    //still need to add m_speed options 
+
     // Configure autonomous sendable chooser
     SmartDashboard.putData("Auto Mode", m_chooser);
+    SmartDashboard.putData("Launch Speed", m_speed);
   }
 
   public static RobotContainer getInstance() {
@@ -157,6 +163,10 @@ private final Joystick m_opJoy1 = new Joystick(1);
   public Command getArcadeDriveCommand() {
     return new DriveCommand(
         m_drivetrain, () -> -m_controller.getRawAxis(1), () -> m_controller.getRawAxis(4));
+  }
+
+  public Command getIntakeSpeed(){
+    return m_speed.getSelected();
   }
 
 }
