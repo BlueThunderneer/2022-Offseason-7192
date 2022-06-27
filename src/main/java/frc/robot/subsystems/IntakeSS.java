@@ -37,6 +37,7 @@ public void grabBall() {
   /** Launches the ball. */
 public void launchBall() {
     intakemotors.set(-.25);
+    //intakemotors.get(); retrieve motor speed?
   }
    
   // Stops running intake. This is called at the end of Grab and Launch Ball Commands.
@@ -44,4 +45,8 @@ public void launchBall() {
 public void stop() {
     intakemotors.set(0.0);
   }        
+
+ public double getSpeed() {
+    return intakemotors.get();
+  }
 }
