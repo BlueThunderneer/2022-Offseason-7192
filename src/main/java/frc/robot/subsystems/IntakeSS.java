@@ -13,6 +13,7 @@ public class IntakeSS extends SubsystemBase {
     private Spark spark4;
     private Spark spark5;
     private MotorControllerGroup intakemotors;
+    //*****AUGER CODE***** DECLARE NEW Spark named spark6
 
 public IntakeSS() {
     spark4 = new Spark(4);   //define motor controller 4
@@ -27,6 +28,8 @@ public IntakeSS() {
     //Put the motor controllers in a group 
     intakemotors = new MotorControllerGroup(spark4, spark5);
     addChild("IntakeMotors",intakemotors);
+
+    //*****AUGER CODE*****DEFINE A NEW MOTOR CONTROLLER NAMED spark6.  don't forget the add child part
     }
 
     /** Grabs the ball */
@@ -37,6 +40,9 @@ public void grabBall() {
   /** Launches the ball. */
 public void launchBall() {
     intakemotors.set(-.25);
+    //*****AUGER CODE*****ADD CODE TO SET THE AUGER MOTOR CONTROLLER SPEED HERE
+
+
     //intakemotors.get(); retrieve motor speed?
   }
    
