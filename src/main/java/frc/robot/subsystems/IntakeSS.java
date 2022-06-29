@@ -49,7 +49,7 @@ public void grabBall() {
 public void launchBall() {
     intakemotors.set(-.25);
     //*****AUGER CODE*****ADD CODE TO SET THE AUGER MOTOR CONTROLLER SPEED HERE
-    augermotor.set(-.25);
+    augermotor.set(1.0);
 
 
     //intakemotors.get(); retrieve motor speed?
@@ -59,6 +59,7 @@ public void launchBall() {
   // Stops the intake motors when the button is released.
 public void stop() {
     intakemotors.set(0.0);
+    augermotor.set(0.0);
   }        
 
  public double getSpeed() {
