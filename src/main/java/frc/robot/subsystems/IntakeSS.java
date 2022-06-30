@@ -47,9 +47,9 @@ public void grabBall() {
 
   /** Launches the ball. */
 public void launchBall() {
-    intakemotors.set(-.25);
+    intakemotors.set(-.50);
     //*****AUGER CODE*****ADD CODE TO SET THE AUGER MOTOR CONTROLLER SPEED HERE
-    spark6.set(1);
+    spark6.set(1.0);
 
 
     //intakemotors.get(); retrieve motor speed?
