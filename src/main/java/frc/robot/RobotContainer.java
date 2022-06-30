@@ -81,7 +81,7 @@ private final Joystick m_opJoy1 = new Joystick(1);
     // SmartDashboard Buttons
     SmartDashboard.putData("Autonomous Command", new AutonomousCommand(m_drivetrain));
     SmartDashboard.putData("DriveCommand", new DriveCommand( m_drivetrain, null, null));
-    SmartDashboard.putData("Drive Speed", new getIntakeSpeed(m_intakess));
+    SmartDashboard.putData("Launch Speed", new getIntakeSpeed(m_intakess));
 
     // Configure the button bindings
     configureButtonBindings();

@@ -35,8 +35,8 @@ public IntakeSS() {
     spark6 = new Spark(6);  //define motor controller 6
     addChild("Spark6",spark6);
     spark6.setInverted(false);
-    augermotor = new MotorControllerGroup(spark6);
-    addChild("AUGERMotor", augermotor);
+    //augermotor = new MotorControllerGroup(spark6);
+    //addChild("AUGERMotor", augermotor);
 
     }
 
@@ -49,7 +49,7 @@ public void grabBall() {
 public void launchBall() {
     intakemotors.set(-.25);
     //*****AUGER CODE*****ADD CODE TO SET THE AUGER MOTOR CONTROLLER SPEED HERE
-    augermotor.set(-.25);
+    spark6.set(1);
 
 
     //intakemotors.get(); retrieve motor speed?
@@ -59,6 +59,7 @@ public void launchBall() {
   // Stops the intake motors when the button is released.
 public void stop() {
     intakemotors.set(0.0);
+    spark6.set(0.0);
   }        
 
  public double getSpeed() {
